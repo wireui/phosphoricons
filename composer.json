@@ -1,0 +1,19 @@
+{
+    "name": "wireui/phosphoricons",
+    "description": "The phosphoricons made for laravel blade by WireUI",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "WireUi\\Phosphoricons\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PH7-Jack",
+            "email": "pedrolivertwd@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
