@@ -1,2 +1,7 @@
-/vendor/
 .tmp
+.idea
+.vscode
+.php-cs-fixer.cache
+.phpunit.result.cache
+coverage
+vendor
