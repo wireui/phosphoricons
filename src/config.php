@@ -3,16 +3,16 @@
 return [
     /*
         |--------------------------------------------------------------------------
-        | Icons Style
+        | Icons Variant
         |--------------------------------------------------------------------------
         |
-        | The icon style can be thin, light, fill, regular, duotone, bold
+        | The icon variant can be thin, light, fill, regular, duotone, bold
         | <x-icon bold />
         | <x-icon duotone />
         | <x-icon variant="thin" />
         |
     */
-    'style' => env('WIREUI_PHOSPHOR_ICONS_STYLE', 'regular'),
+    'variant' => env('WIREUI_PHOSPHOR_ICONS_VARIANT', 'regular'),
 
     /*
         |--------------------------------------------------------------------------
