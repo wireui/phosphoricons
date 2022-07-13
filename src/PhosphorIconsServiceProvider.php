@@ -33,7 +33,6 @@ class PhosphorIconsServiceProvider extends ServiceProvider
     {
         $this->callAfterResolving(BladeCompiler::class, static function (BladeCompiler $blade): void {
             $blade->component(Icon::class, config('wireui.phosphoricons.alias'));
-            $blade->component(Icon::class, 'icons.phosphor');
         });
     }
 }

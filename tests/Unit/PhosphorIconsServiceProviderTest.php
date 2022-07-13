@@ -44,8 +44,5 @@ it('should register the blade components', function () {
     /** @var BladeCompiler $bladeCompiler */
     $bladeCompiler = resolve(BladeCompiler::class);
 
-    expect($bladeCompiler->getClassComponentAliases())->toHaveKeys([
-        'icon',
-        'icons.phosphor',
-    ]);
+    expect($bladeCompiler->getClassComponentAliases())->toHaveKey('icon');
 });
