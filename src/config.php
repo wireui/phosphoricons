@@ -7,6 +7,7 @@ return [
         |--------------------------------------------------------------------------
         |
         | The icon variant can be thin, light, fill, regular, duotone, bold
+        | See the PhosphorIcons variants for more information.
         | <x-icon bold />
         | <x-icon duotone />
         | <x-icon variant="thin" />
