@@ -7,7 +7,7 @@ use Illuminate\View\Compilers\BladeCompiler;
 
 class PhosphorIconsServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->registerConfig();
         $this->registerBladeComponents();
@@ -31,12 +31,14 @@ class PhosphorIconsServiceProvider extends ServiceProvider
 
     protected function registerBladeComponents(): void
     {
-        if (config('wireui.phosphoricons.alias') === false) {
+        if (!config('wireui.phosphoricons.alias')) {
             return;
         }
 
         $this->callAfterResolving(BladeCompiler::class, static function (BladeCompiler $blade): void {
-            $blade->component(Icon::class, config('wireui.phosphoricons.alias'));
+            /** @var string $alias */
+            $alias = config('wireui.phosphoricons.alias');
+            $blade->component(Icon::class, $alias);
         });
     }
 }

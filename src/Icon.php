@@ -2,6 +2,7 @@
 
 namespace WireUi\PhosphorIcons;
 
+use Illuminate\Contracts\View\{Factory, View};
 use Illuminate\View\Component;
 
 class Icon extends Component
@@ -19,7 +20,7 @@ class Icon extends Component
         $this->variant = $this->getVariant();
     }
 
-    public function render()
+    public function render(): View|Factory
     {
         return view("wireui.phosphor::icons.{$this->variant}.{$this->name}");
     }
@@ -38,6 +39,7 @@ class Icon extends Component
             }
         }
 
+        /** @var string */
         return config('wireui.phosphoricons.variant');
     }
 }
