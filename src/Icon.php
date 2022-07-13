@@ -21,7 +21,7 @@ class Icon extends Component
 
     public function render()
     {
-        return view("wireui.phosphoricons::icons.{$this->variant}.{$this->name}");
+        return view("wireui.phosphor::icons.{$this->variant}.{$this->name}");
     }
 
     private function getVariant(): string
