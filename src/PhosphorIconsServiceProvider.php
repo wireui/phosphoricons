@@ -31,6 +31,10 @@ class PhosphorIconsServiceProvider extends ServiceProvider
 
     protected function registerBladeComponents(): void
     {
+        if (config('wireui.phosphoricons.alias') === false) {
+            return;
+        }
+
         $this->callAfterResolving(BladeCompiler::class, static function (BladeCompiler $blade): void {
             $blade->component(Icon::class, config('wireui.phosphoricons.alias'));
         });

@@ -21,6 +21,7 @@ return [
         |--------------------------------------------------------------------------
         |
         | The component alias to import in the blade/livewire component
+        | Set to false to disable the component.
         | <x-icon ... />
         |
     */
