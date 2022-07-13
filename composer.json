@@ -30,7 +30,8 @@
         "orchestra/testbench": "^7.6",
         "phpunit/phpunit": "^9.5",
         "pestphp/pest": "^1.21",
-        "mockery/mockery": "^1.5"
+        "mockery/mockery": "^1.5",
+        "phpstan/phpstan": "^1.8"
     },
     "scripts": {
         "test": "./vendor/bin/pest",
