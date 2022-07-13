@@ -26,7 +26,7 @@
         "laravel/framework": "^9.19"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.8",
+        "friendsofphp/php-cs-fixer": "^3.9",
         "orchestra/testbench": "^7.6",
         "phpunit/phpunit": "^9.5",
         "pestphp/pest": "^1.21",
