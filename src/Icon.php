@@ -4,21 +4,11 @@ namespace WireUi\PhosphorIcons;
 
 use Illuminate\View\Component;
 
-enum Variant: string
-{
-    case Thin    = 'thin';
-    case Light   = 'light';
-    case Regular = 'regular';
-    case Fill    = 'fill';
-    case Duotone = 'duotone';
-    case Bold    = 'bold';
-}
-
 class Icon extends Component
 {
     public function __construct(
         public string $name,
-        public ?Variant $variant,
+        public ?string $variant = null,
         public bool $thin = false,
         public bool $light = false,
         public bool $regular = false,
@@ -31,7 +21,7 @@ class Icon extends Component
 
     public function render()
     {
-        return view('wireui.phosphoricons::components.icon');
+        return view("wireui.phosphoricons::icons.{$this->variant}.{$this->name}");
     }
 
     private function getVariant(): string
@@ -40,28 +30,12 @@ class Icon extends Component
             return $this->variant;
         }
 
-        if ($this->thin) {
-            return 'thin';
-        }
+        $variants = ['thin', 'light', 'fill', 'regular', 'duotone', 'bold'];
 
-        if ($this->light) {
-            return 'light';
-        }
-
-        if ($this->regular) {
-            return 'regular';
-        }
-
-        if ($this->fill) {
-            return 'fill';
-        }
-
-        if ($this->duotone) {
-            return 'duotone';
-        }
-
-        if ($this->bold) {
-            return 'bold';
+        foreach ($variants as $variant) {
+            if ($this->{$variant}) {
+                return $variant;
+            }
         }
 
         return config('wireui.phosphoricons.variant');

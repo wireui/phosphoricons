@@ -4,6 +4,7 @@ namespace Tests\Unit\PhosphorIconsServiceProvider;
 
 use Illuminate\View\Compilers\BladeCompiler;
 use Tests\UnitTestCase;
+use WireUi\PhosphorIcons\Icon;
 
 class RegisterIconComponentAliasTest extends UnitTestCase
 {
@@ -20,6 +21,6 @@ class RegisterIconComponentAliasTest extends UnitTestCase
         $aliases = $bladeCompiler->getClassComponentAliases();
 
         $this->assertArrayHasKey('custom-icon', $aliases, 'The custom alias should be registered');
-        $this->assertSame($aliases['custom-icon'], 'WireUi\PhosphorIcons\Icon');
+        $this->assertSame($aliases['custom-icon'], Icon::class);
     }
 }
