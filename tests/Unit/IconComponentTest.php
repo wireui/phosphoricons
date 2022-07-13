@@ -15,6 +15,25 @@ function getIcons(string $variant): Collection
     ]);
 }
 
+it('should get the default icon variant', function () {
+    $icon = new Icon(name: 'house');
+
+    $parsedStyle = $this->invokeMethod($icon, 'getVariant');
+
+    expect($parsedStyle)->toBe('regular');
+});
+
+it('should make the icon blade view', function () {
+    $icon = new Icon(name: 'house', thin: true);
+
+    $view = $icon->render();
+
+    $parsedStyle = $this->invokeMethod($icon, 'getVariant');
+
+    expect($view->name())->toEndWith('icons.thin.house');
+    expect($parsedStyle)->toBe('thin');
+});
+
 it('should get the correct icon variant', function (string $expected, Icon $icon) {
     $parsedStyle = $this->invokeMethod($icon, 'getVariant');
 
@@ -29,19 +48,15 @@ it('should get the correct icon variant', function (string $expected, Icon $icon
     ['bold',    new Icon(name: 'house', bold: true)],
 ]);
 
-it('should get the default icon variant', function () {
-    $icon = new Icon(name: 'house');
-
-    $parsedStyle = $this->invokeMethod($icon, 'getVariant');
-
-    expect($parsedStyle)->toBe('regular');
-});
-
 it('should render all components with attributes', function (string $icon, string $variant) {
     $html = Blade::render('<x-icon :name="$name" :variant="$variant" class="w-5 h-5" style="foo: bar" />', [
         'name'    => $icon,
         'variant' => $variant,
     ]);
+
+    $view = (new Icon(name: $icon, variant: $variant))->render();
+
+    expect($view->name())->toBe("wireui.phosphor::icons.{$variant}.{$icon}");
 
     expect($html)
         ->toContain('<svg')
