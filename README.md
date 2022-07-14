@@ -1,5 +1,6 @@
 # WireUi Phosphor Icons
 #### _The Phosphor Icons for laravel blade made by WireUI_
+### This package doesn't have any WireUI dependency
 WireUI Phosphor Icons is a library of icon components to empower your Laravel and Livewire application development.
 
 Stop creating all icon components from scratch. Get all WireUI Phosphor Icons for free.
