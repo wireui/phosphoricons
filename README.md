@@ -15,7 +15,7 @@ Phosphor is a flexible icon family for interfaces, diagrams, presentations — w
 * [PHP 8.1](https://www.php.net/releases/8.1/en.php)
 
 #### Install
-```
+```bash
 composer require wireui/phosphoricons
 ```
 
@@ -30,7 +30,7 @@ You can find a list of all icons and variants on the [Phosphor Icons] website
 - duotone
 - bold
 
-```
+```blade
 <x-icon name="user" />
 <x-icon name="user" duotone />
 <x-icon name="user" variant="fill" />
@@ -38,7 +38,7 @@ You can find a list of all icons and variants on the [Phosphor Icons] website
 ```
 
 #### Configuration (Optional)
-```
+```.env
 # Set the default icon variant. Default = regular
 WIREUI_PHOSPHOR_ICONS_VARIANT=fill
 
@@ -47,7 +47,7 @@ WIREUI_PHOSPHOR_ICONS_ALIAS=icons.phosphor
 ```
 
 #### Publish (Optional)
-```
+```bash
 php artisan vendor:publish --tag="wireui.phosphoricons.config"
 php artisan vendor:publish --tag="wireui.phosphoricons.views"
 ```
