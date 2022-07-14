@@ -52,5 +52,5 @@ jobs:
 
       - name: Check code style
         run: |
-          ./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no --verbose --stop-on-violation
+          ./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no
           ./vendor/bin/phpstan analyse src --level max
