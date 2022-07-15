@@ -34,8 +34,10 @@
         "phpstan/phpstan": "^1.8"
     },
     "scripts": {
-        "test": "./vendor/bin/pest",
-        "phpcs": "./vendor/bin/php-cs-fixer fix"
+        "test": "./vendor/bin/pest --coverage --min=100",
+        "phpstan": "./vendor/bin/phpstan analyse src --level max",
+        "phpcs:fix": "./vendor/bin/php-cs-fixer fix",
+        "phpcs:check": "./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no"
     },
     "autoload": {
         "psr-4": {

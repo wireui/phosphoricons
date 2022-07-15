@@ -48,9 +48,9 @@ jobs:
           composer update --no-interaction --no-suggest
 
       - name: Run PHPUnit tests
-        run: ./vendor/bin/pest --coverage --min=100
+        run: composer test
 
       - name: Check code style
         run: |
-          ./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no
-          ./vendor/bin/phpstan analyse src --level max
+          composer phpcs:check
+          composer phpstan
