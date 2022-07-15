@@ -63,13 +63,14 @@ it('should render all components with attributes', function (string $icon, strin
         ->toContain('</svg>')
         ->toContain('class="w-5 h-5"')
         ->toContain('style="foo: bar"');
-})->with(function () {
-    return collect([
-        getIcons('thin'),
-        getIcons('light'),
-        getIcons('regular'),
-        getIcons('fill'),
-        getIcons('duotone'),
-        getIcons('bold'),
-    ])->collapse()->toArray();
-});
+})->with(
+    collect()
+        ->push(getIcons('thin'))
+        ->push(getIcons('light'))
+        ->push(getIcons('regular'))
+        ->push(getIcons('fill'))
+        ->push(getIcons('duotone'))
+        ->push(getIcons('bold'))
+        ->collapse()
+        ->toArray()
+);
