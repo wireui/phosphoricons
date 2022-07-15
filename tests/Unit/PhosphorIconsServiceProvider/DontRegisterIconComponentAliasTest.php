@@ -12,7 +12,7 @@ class DontRegisterIconComponentAliasTest extends UnitTestCase
         $app['config']->set('wireui.phosphoricons.alias', false);
     }
 
-    public function test_should_register_the_icon_blade_component_with_a_custom_alias()
+    public function test_should_not_register_the_icon_component()
     {
         /** @var BladeCompiler $bladeCompiler */
         $bladeCompiler = resolve(BladeCompiler::class);
