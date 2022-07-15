@@ -3,7 +3,7 @@
 return [
     /*
         |--------------------------------------------------------------------------
-        | Icons Variant
+        | Icons Variants
         |--------------------------------------------------------------------------
         |
         | The icon variant can be thin, light, fill, regular, duotone, bold
