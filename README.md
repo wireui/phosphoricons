@@ -1,4 +1,19 @@
+<p align="center">
+    <a href="https://github.com/wireui/phosphoricons/">
+        <img src="https://img.shields.io/packagist/dt/wireui/phosphoricons" alt="Packagist Downloads" data-canonical-src="https://img.shields.io/packagist/dt/wireui/phosphoricons" style="max-width:100%;" />
+    </a>
+    <a href="https://github.com/wireui/phosphoricons/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/wireui/phosphoricons" alt="GitHub license" data-canonical-src="https://img.shields.io/github/license/wireui/phosphoricons" style="max-width:100%;" />
+    </a>
+    <a href="https://twitter.com/ph7jack">
+        <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FPH7-Jack%2Fwireui"></a>
+    </a>
+</p>
+
 # WireUi Phosphor Icons
+
+[![WireUi PhosphorIcons Tests](https://github.com/wireui/phosphoricons/actions/workflows/tests.yml/badge.svg)](https://github.com/wireui/phosphoricons/actions/workflows/tests.yml)
+
 #### _The Phosphor Icons for laravel blade made by WireUI_
 ### This package doesn't have any WireUI dependency
 WireUI Phosphor Icons is a library of icon components to empower your Laravel and Livewire application development.
