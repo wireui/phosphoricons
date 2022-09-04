@@ -7,7 +7,7 @@ use WireUi\PhosphorIcons\Icon;
 
 function getIcons(string $variant): Collection
 {
-    $files = (new Finder())->files()->in(__DIR__ . "/../../src/views/icons/{$variant}");
+    $files = (new Finder())->files()->in(__DIR__ . "/../../src/views/components/{$variant}");
 
     return collect($files)->map(fn (SplFileInfo $file) => [
         'icon'    => Str::of($file->getFilename())->before('.blade.php'),
@@ -30,7 +30,7 @@ it('should make the icon blade view', function () {
 
     $parsedStyle = $this->invokeMethod($icon, 'getVariant');
 
-    expect($view->name())->toEndWith('icons.thin.house');
+    expect($view->name())->toEndWith('components.thin.house');
     expect($parsedStyle)->toBe('thin');
 });
 
@@ -49,20 +49,24 @@ it('should get the correct icon variant', function (string $expected, Icon $icon
 ]);
 
 it('should render all components with attributes', function (string $icon, string $variant) {
-    $html = Blade::render('<x-icon :name="$name" :variant="$variant" class="w-5 h-5" style="foo: bar" />', [
-        'name'    => $icon,
-        'variant' => $variant,
-    ]);
+    $html = Blade::render(<<<BLADE
+        <x-icon name="{$icon}" variant="{$variant}" class="w-5 h-5" style="foo: bar" />
+
+        <x-phosphor.icons::{$variant}.{$icon} class="w-10 h-10" />
+    BLADE);
 
     $view = (new Icon(name: $icon, variant: $variant))->render();
 
-    expect($view->name())->toBe("wireui.phosphor::icons.{$variant}.{$icon}");
+    expect($view->name())->toBe("phosphor.icons::components.{$variant}.{$icon}");
 
     expect($html)
         ->toContain('<svg')
         ->toContain('</svg>')
         ->toContain('class="w-5 h-5"')
-        ->toContain('style="foo: bar"');
+        ->toContain('class="w-10 h-10"')
+        ->toContain('style="foo: bar"')
+        ->not->toContain('<x-icon')
+        ->not->toContain('<x-phosphor.icons');
 })->with(
     collect()
         ->push(getIcons('thin'))

@@ -11,8 +11,8 @@ it('should register the views path', function () {
 
     /** @var FileViewFinder $finder */
     $finder = $view->getFinder();
-    expect($finder->getHints())->toHaveKey('wireui.phosphor');
-    expect($finder->getHints()['wireui.phosphor'][0])->toContain('src/views');
+    expect($finder->getHints())->toHaveKey('phosphor.icons');
+    expect($finder->getHints()['phosphor.icons'][0])->toContain('src/views');
 });
 
 it('should merge the wireui.phosphoricons config', function () {

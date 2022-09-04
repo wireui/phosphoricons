@@ -17,7 +17,7 @@ class PhosphorIconsServiceProvider extends ServiceProvider
     {
         $rootDir = __DIR__;
 
-        $this->loadViewsFrom("{$rootDir}/views", 'wireui.phosphor');
+        $this->loadViewsFrom("{$rootDir}/views", 'phosphor.icons');
         $this->mergeConfigFrom("{$rootDir}/config.php", 'wireui.phosphoricons');
         $this->publishes(
             ["{$rootDir}/config.php" => config_path('wireui/phosphoricons.php')],
