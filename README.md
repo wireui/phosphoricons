@@ -51,18 +51,12 @@ You can find a list of all icons and variants on the [Phosphor Icons] website
 <x-icon name="user" duotone />
 <x-icon name="user" variant="fill" />
 <x-icon class="w-5 h-5 text-teal-600" name="user" />
+
+<x-phosphor.icons::regular.user />
+<x-phosphor.icons::bold.user class="w-5 h-5" />
 ```
 
-#### Configuration (Optional)
-```.env
-# Set the default icon variant. Default = regular
-WIREUI_PHOSPHOR_ICONS_VARIANT=fill
-
-# Set the icon alias. Default = icon
-WIREUI_PHOSPHOR_ICONS_ALIAS=icons.phosphor
-```
-
-#### Publish (Optional)
+#### Publish (Optional Customization)
 ```bash
 php artisan vendor:publish --tag="wireui.phosphoricons.config"
 php artisan vendor:publish --tag="wireui.phosphoricons.views"
