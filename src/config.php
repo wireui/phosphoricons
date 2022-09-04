@@ -13,7 +13,7 @@ return [
         | <x-icon variant="thin" />
         |
     */
-    'variant' => env('WIREUI_PHOSPHOR_ICONS_VARIANT', 'regular'),
+    'variant' => 'regular',
 
     /*
         |--------------------------------------------------------------------------
@@ -25,5 +25,5 @@ return [
         | <x-icon ... />
         |
     */
-    'alias' => env('WIREUI_PHOSPHOR_ICONS_ALIAS', 'icon'),
+    'alias' => 'icon',
 ];
