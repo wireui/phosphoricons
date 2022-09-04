@@ -7,8 +7,8 @@
 
 # make a clean state
 rm -rf .tmp
-rm -rf src/views/icons/{thin,light,fill,regular,duotone,bold}
-mkdir -p src/views/icons/{thin,light,fill,regular,duotone,bold}
+rm -rf src/views/components/{thin,light,fill,regular,duotone,bold}
+mkdir -p src/views/components/{thin,light,fill,regular,duotone,bold}
 
 # prepare icons
 curl https://phosphoricons.com/assets/phosphor-icons.zip --create-dirs -o .tmp/icons.zip
@@ -23,10 +23,10 @@ for FILE in .tmp/icons/SVGs/{Thin,Light,Fill,Regular,Duotone,Bold}/*.svg; do
     echo $NEW_FILE
 done
 
-mv .tmp/icons/SVGs/Thin/* src/views/icons/thin
-mv .tmp/icons/SVGs/Light/* src/views/icons/light
-mv .tmp/icons/SVGs/Fill/* src/views/icons/fill
-mv .tmp/icons/SVGs/Regular/* src/views/icons/regular
-mv .tmp/icons/SVGs/Duotone/* src/views/icons/duotone
-mv .tmp/icons/SVGs/Bold/* src/views/icons/bold
+mv .tmp/icons/SVGs/Thin/* src/views/components/thin
+mv .tmp/icons/SVGs/Light/* src/views/components/light
+mv .tmp/icons/SVGs/Fill/* src/views/components/fill
+mv .tmp/icons/SVGs/Regular/* src/views/components/regular
+mv .tmp/icons/SVGs/Duotone/* src/views/components/duotone
+mv .tmp/icons/SVGs/Bold/* src/views/components/bold
 rm -rf .tmp
