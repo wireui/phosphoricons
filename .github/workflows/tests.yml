@@ -53,6 +53,4 @@ jobs:
         run: composer test
 
       - name: Check code style
-        run: |
-          composer phpcs:check
-          composer phpstan
+        run: composer verify
