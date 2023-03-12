@@ -76,5 +76,5 @@ it('should render all components with attributes', function (string $icon, strin
         ->push(getIcons('duotone'))
         ->push(getIcons('bold'))
         ->collapse()
-        ->toArray()
+        ->toArray(),
 );

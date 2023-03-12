@@ -21,11 +21,11 @@ class PhosphorIconsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom("{$rootDir}/config.php", 'wireui.phosphoricons');
         $this->publishes(
             ["{$rootDir}/config.php" => config_path('wireui/phosphoricons.php')],
-            'wireui.phosphoricons.config'
+            'wireui.phosphoricons.config',
         );
         $this->publishes(
             ["{$rootDir}/views" => resource_path('views/vendor/wireui/phosphoricons')],
-            'wireui.phosphoricons.views'
+            'wireui.phosphoricons.views',
         );
     }
 
