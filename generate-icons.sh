@@ -11,7 +11,7 @@ rm -rf src/views/components/{thin,light,fill,regular,duotone,bold}
 mkdir -p src/views/components/{thin,light,fill,regular,duotone,bold}
 
 # prepare icons
-curl https://phosphoricons.com/assets/phosphor-icons.zip --create-dirs -o .tmp/icons.zip
+curl https://github.com/phosphor-icons/homepage/releases/download/v1.4.0/phosphor-icons.zip --create-dirs --location --output .tmp/icons.zip
 unzip .tmp/icons.zip -d .tmp/icons
 
 for FILE in .tmp/icons/SVGs/{Thin,Light,Fill,Regular,Duotone,Bold}/*.svg; do
