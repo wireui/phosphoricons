@@ -6,7 +6,7 @@
         <img src="https://img.shields.io/github/license/wireui/phosphoricons" alt="GitHub license" data-canonical-src="https://img.shields.io/github/license/wireui/phosphoricons" style="max-width:100%;" />
     </a>
     <a href="https://twitter.com/ph7jack">
-        <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FPH7-Jack%2Fwireui"></a>
+        <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FPH7-Jack%2Fwireui" />
     </a>
 </p>
 
@@ -26,9 +26,9 @@ Phosphor is a flexible icon family for interfaces, diagrams, presentations — w
 
 
 ### 📚 Get Started
-#### Prerequisites:
-* [Laravel 9.x](https://laravel.com)
-* [PHP 8.1](https://www.php.net/releases/8.1/en.php)
+#### Requirements:
+* [Laravel 9.x | 10.x](https://laravel.com)
+* [PHP 8.1 | 8.2](https://www.php.net/releases/8.1/en.php)
 
 #### Install
 ```bash
