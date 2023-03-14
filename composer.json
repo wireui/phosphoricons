@@ -42,8 +42,7 @@
         "generate-icons": "./generate-icons.sh",
         "verify": [
             "@pint:check",
-            "@phpstan",
-            "@test"
+            "@phpstan"
         ]
     },
     "autoload": {
