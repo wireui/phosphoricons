@@ -1,0 +1,40 @@
+name: Generate Icons
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+
+      - name: Run generate-icons.sh
+        run: |
+          chmod +x ./generate-icons.sh
+          ./generate-icons.sh
+
+      - name: Create new branch
+        run: |
+          BRANCH_NAME="icons-update-$(date +%Y-%m-%d-%H-%M-%S)"
+          git checkout -b $BRANCH_NAME
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m 'Automatically generated icons'
+          git push origin HEAD
+
+      - name: Open a pull request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: 'main'
+          pr_title: 'Automatically Generated Icons Update'
+          pr_body: 'This is an auto-generated PR with icon updates.'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
