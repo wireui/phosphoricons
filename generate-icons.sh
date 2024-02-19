@@ -14,7 +14,7 @@ mkdir -p src/views/components/{thin,light,fill,regular,duotone,bold}
 git clone https://github.com/PH7-Jack/phosphor-icons-core.git .core
 
 for FILE in .core/assets/{thin,light,fill,regular,duotone,bold}/*.svg; do
-    sed -i 's/<svg/<svg {{ $attributes }}/g' $FILE;
+    sed -i '' 's/<svg/<svg {{ $attributes }}/g' $FILE;
 
     NEW_FILE="$(echo $FILE | sed 's/-thin.svg//;s/-light.svg//;s/-fill.svg//;s/-duotone.svg//;s/-bold.svg//;s/\.svg//g')"
     NEW_FILE="$NEW_FILE.blade.php"
