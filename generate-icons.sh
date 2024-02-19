@@ -11,7 +11,7 @@ rm -rf src/views/components/{thin,light,fill,regular,duotone,bold}
 mkdir -p src/views/components/{thin,light,fill,regular,duotone,bold}
 
 # clone icons core
-git clone https://github.com/PH7-Jack/phosphor-icons-core.git .core
+git clone https://github.com/phosphor-icons/core.git .core
 
 for FILE in .core/assets/{thin,light,fill,regular,duotone,bold}/*.svg; do
     sed -i '' 's/<svg/<svg {{ $attributes }}/g' $FILE;
