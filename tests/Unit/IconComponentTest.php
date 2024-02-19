@@ -10,7 +10,7 @@ function getIcons(string $variant): Collection
     $files = (new Finder())->files()->in(__DIR__ . "/../../src/views/components/{$variant}");
 
     return collect($files)->map(fn (SplFileInfo $file) => [
-        'icon'    => Str::of($file->getFilename())->before('.blade.php'),
+        'icon'    => Str::of($file->getFilename())->before('.blade.php')->toString(),
         'variant' => $variant,
     ]);
 }
@@ -18,7 +18,7 @@ function getIcons(string $variant): Collection
 it('should get the default icon variant', function () {
     $icon = new Icon(name: 'house');
 
-    $parsedStyle = $this->invokeMethod($icon, 'getVariant');
+    $parsedStyle = test()->invokeMethod($icon, 'getVariant');
 
     expect($parsedStyle)->toBe('regular');
 });
@@ -28,14 +28,14 @@ it('should make the icon blade view', function () {
 
     $view = $icon->render();
 
-    $parsedStyle = $this->invokeMethod($icon, 'getVariant');
+    $parsedStyle = test()->invokeMethod($icon, 'getVariant');
 
     expect($view->name())->toEndWith('components.thin.house');
     expect($parsedStyle)->toBe('thin');
 });
 
 it('should get the correct icon variant', function (string $expected, Icon $icon) {
-    $parsedStyle = $this->invokeMethod($icon, 'getVariant');
+    $parsedStyle = test()->invokeMethod($icon, 'getVariant');
 
     expect($parsedStyle)->toBe($expected);
 })->with([
