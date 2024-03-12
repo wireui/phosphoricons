@@ -22,8 +22,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.1|^8.2|^8.3",
-        "laravel/framework": "^9.52|^10.0"
+        "php": "^8.1|^8.2|^8.3|^8.4",
+        "laravel/framework": "^9.52|^10.0|^11.0"
     },
     "require-dev": {
         "orchestra/testbench": "^8.0",
