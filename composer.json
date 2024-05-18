@@ -1,26 +1,24 @@
 {
     "name": "wireui/phosphoricons",
-    "description": "The phosphoricons made for laravel blade by WireUI",
     "type": "library",
+    "description": "The phosphoricons made for laravel blade by WireUI",
     "license": "MIT",
     "keywords": [
-        "livewire icons components",
-        "livewire icons",
         "wireui",
-        "wireui phosphoricons",
-        "laravel components",
         "blade icons",
+        "livewire icons",
         "blade components",
-        "blade phosphoricons"
+        "laravel components",
+        "blade phosphoricons",
+        "wireui phosphoricons",
+        "livewire icons components"
     ],
     "authors": [
         {
             "name": "PH7-Jack",
-            "email": "pedrolivertwd@gmail.com"
+            "email": "pedro@wireui.dev"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^8.1|^8.2|^8.3|^8.4",
         "laravel/framework": "^9.52|^10.0|^11.0"
@@ -34,17 +32,6 @@
         "phpstan/phpstan": "^1.10",
         "larastan/larastan": "^2.9"
     },
-    "scripts": {
-        "test": "./vendor/bin/pest --coverage --min=100 --parallel",
-        "phpstan": "./vendor/bin/phpstan analyse src --level max",
-        "pint:fix": "./vendor/bin/pint",
-        "pint:check": "./vendor/bin/pint --test",
-        "generate-icons": "./generate-icons.sh",
-        "verify": [
-            "@pint:check",
-            "@phpstan"
-        ]
-    },
     "autoload": {
         "psr-4": {
             "WireUi\\PhosphorIcons\\": "src/"
@@ -55,6 +42,17 @@
             "App\\": "vendor/orchestra/testbench-core/laravel/app",
             "Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest --coverage --min=100 --parallel",
+        "phpstan": "./vendor/bin/phpstan analyse src --level max",
+        "pint:fix": "./vendor/bin/pint",
+        "pint:check": "./vendor/bin/pint --test",
+        "generate-icons": "./generate-icons.sh",
+        "verify": [
+            "@pint:check",
+            "@phpstan"
+        ]
     },
     "extra": {
         "laravel": {
@@ -68,5 +66,7 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
