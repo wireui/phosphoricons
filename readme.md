@@ -15,7 +15,7 @@ WireUi Phosphor Icons is a library of icons components to empower your Laravel a
 
 Stop creating all icons components from scratch. Get all WireUi Phosphor Icons for free.
 
-##### 🔥 Phosphor Icons
+#### 🔥 Phosphor Icons
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. — Development made by [Phosphor Icons](https://phosphoricons.com).
 
