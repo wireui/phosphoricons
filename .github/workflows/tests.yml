@@ -1,4 +1,4 @@
-name: WireUi PhosphorIcons Tests
+name: Tests
 
 on:
   push:
