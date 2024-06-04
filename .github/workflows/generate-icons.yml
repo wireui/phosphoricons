@@ -17,8 +17,8 @@ jobs:
 
       - name: Run generate-icons.sh
         run: |
-          chmod +x ./generate-icons.sh
-          ./generate-icons.sh
+          chmod +x ./generate-icons.linux.sh
+          ./generate-icons.linux.sh
 
       - name: Create new branch
         run: |
