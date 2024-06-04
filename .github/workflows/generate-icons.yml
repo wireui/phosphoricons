@@ -21,9 +21,11 @@ jobs:
           ./generate-icons.linux.sh
 
       - name: Create new branch
+        id: create_branch
         run: |
           BRANCH_NAME="icons-update-$(date +%Y-%m-%d-%H-%M-%S)"
           git checkout -b $BRANCH_NAME
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
 
       - name: Commit and push changes
         run: |
@@ -32,9 +34,10 @@ jobs:
           git push origin HEAD
 
       - name: Open a pull request
-        uses: repo-sync/pull-request@v2
+        uses: peter-evans/create-pull-request@v6
         with:
-          destination_branch: 'main'
-          pr_title: 'Automatically Generated Icons Update'
-          pr_body: 'This is an auto-generated PR with icon updates.'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.branch_name }}
+          base: main
+          title: 'Automatically Generated Icons Update'
+          body: 'This is an auto-generated PR with icon updates.'
