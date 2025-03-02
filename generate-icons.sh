@@ -22,5 +22,6 @@ for FILE in .core/assets/{thin,light,fill,regular,duotone,bold}/*.svg; do
     echo $NEW_FILE
 done
 
+mv .core/LICENSE src/views/components/LICENSE
 mv .core/assets/* src/views/components
 rm -rf .core
