@@ -22,6 +22,7 @@ class Icon extends Component
 
     public function render(): View|Factory
     {
+        /** @phpstan-ignore-next-line */
         return view("phosphor.icons::components.{$this->variant}.{$this->name}");
     }
 
