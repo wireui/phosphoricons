@@ -47,7 +47,7 @@ it('should get the correct icon variant', function (string $expected, Icon $icon
     ['bold', new Icon(name: 'house', bold: true)],
 ]);
 
-it("should render all variant icons", function (string $variant) {
+it('should render all variant icons', function (string $variant) {
     foreach (getIcons($variant) as $data) {
         $icon = $data['icon'];
 
